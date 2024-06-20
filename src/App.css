@@ -1,32 +1,28 @@
 .App {
   text-align: center;
   background-color: #F2F1EF;
-
-}
-
-
-.App-header {
-  background-color: #F2F1EF;
-
-
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin); */
-
+  font-family: "courier-std", monospace;
+  flex-wrap: wrap;
 }
 
 .container {
-  padding: 20px 40px;
+  padding: 120px 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 nav {
-
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
-
+  position: fixed;
+  top: 0;
+  padding: 20px 0px;
+  background-color: #F2F1EF;
+  z-index: 1;
 }
 
 .nav-list {
@@ -35,10 +31,9 @@ nav {
   font-size: 19px;
 }
 
-.home {
-  margin-top: 100px;
+#home {
+  max-width: 20px;
   display: flex;
-  justify-content: space-evenly;
 }
 
 .tag {
@@ -46,6 +41,228 @@ nav {
   display: flex;
 }
 
-.about {
-  padding-top: 100px;
+#about {
+  display: flex;
+  justify-content: center;
+  text-align: start;
+  margin: 0px 30px;
+
+}
+
+.ab-content {
+  font-stretch: condensed;
+}
+
+#service {
+  padding-top: 50px;
+}
+
+.s1,
+.s2 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.box {
+  border: solid #000000;
+  min-width: 250px;
+  max-width: 500px;
+  margin: 20px;
+  padding: 10px;
+  text-align: start;
+}
+
+.box:hover {
+  background-color: #000000;
+  color: white;
+}
+
+#project {
+  padding-top: 150px;
+}
+
+.p-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p1,
+.p2,
+.p3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+  text-align: start;
+  padding-top: 10px;
+}
+
+.hi {
+  background-color: #dad6d6;
+  display: flex;
+  text-align: start;
+  padding: 70px;
+  flex-wrap: wrap;
+}
+
+.card_c {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e7e7e7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  height: 70px;
+  width: 300px;
+}
+
+.card_c::before,
+.card_c::after {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  transition: 0.25s linear;
+  z-index: 1;
+}
+
+.card_c span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  font-family: 'Fira Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+}
+
+.card_c .social-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.card_c::before {
+  content: "";
+  left: 0;
+  justify-content: flex-end;
+  background-color: #FC5D2E;
+}
+
+.card_c::after {
+  content: "";
+  right: 0;
+  justify-content: flex-start;
+  background-color: #FC5D2E;
+}
+
+.card_c:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card_c:hover span {
+  opacity: 0;
+  z-index: -3;
+}
+
+.card_c:hover::before {
+  opacity: 0.5;
+  transform: translateY(-100%);
+}
+
+.card_c:hover::after {
+  opacity: 0.5;
+  transform: translateY(100%);
+}
+
+.card_c .social-link:hover {
+  background-color: rgba(249, 244, 255, 0.774);
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.c-1 {
+  margin: 0px 90px;
+  display: flex;
+  gap: 200px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .container {
+    padding: 60px 20px;
+  }
+
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .p1,
+  .p2,
+  .p3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hi {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .c-1 {
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+  }
+
+  .tag h3,
+  .tag h2 {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
